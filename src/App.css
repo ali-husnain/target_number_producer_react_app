@@ -1,0 +1,44 @@
+.App {
+  text-align: center;
+}
+
+.card {
+    display: flex;
+    width: 50%;
+    margin-left: 25%;
+    background: #80808038;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.item {
+    width: 50%;
+}
+
+.row label {
+    float: left;
+    display: block;
+    color: #008000bf;
+    padding-bottom: 10px;
+}
+
+.row .output {
+    border: 1px solid green;
+    min-height: 60px;
+    background: white;
+    color: green;
+}
+
+.item form .row {
+    display: table;
+    margin-top: 12px;
+}
+
+.item form .row .button {
+    background: green;
+    border: green;
+    color: white;
+    padding: 8px;
+    border-radius: 3px;
+    cursor: pointer;
+}
