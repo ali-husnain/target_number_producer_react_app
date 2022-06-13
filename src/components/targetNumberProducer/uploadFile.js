@@ -4,17 +4,11 @@ function UploadFile(props) {
     const [file, setFile] = useState();
     const fileReader = new FileReader();
 
-    const handleOnChange = (e) => {
+    const changeHandler = (e) => {
         setFile(e.target.files[0]);
     };
 
-    const csvFileToArray = string => {
-        const stringToArray = string.trim().replace(/\s/g, ",").split(",");
-        const array = stringToArray.map((item) => parseInt(item))
-        props.setArray(array);
-    };
-
-    const handleOnSubmit = (e) => {
+    const submitHandler = (e) => {
         e.preventDefault();
 
         if (file) {
@@ -27,15 +21,21 @@ function UploadFile(props) {
         }
     };
 
+    const csvFileToArray = string => {
+        const stringToArray = string.trim().replace(/\s/g, ",").split(",");
+        const array = stringToArray.map((item) => parseInt(item))
+        props.setArray(array);
+    };
+
     return (
         <div className='item'>
-                <form onSubmit={handleOnSubmit}>
+                <form onSubmit={submitHandler}>
                 <div className="row">
                     <label>Import CSV of given Numbers</label><br />
                     <input type={"file"}
                         id={"csvFileInput"}
                         accept={".csv"}
-                        onChange={handleOnChange}
+                        onChange={changeHandler}
                     />
                 </div>
                 <div className='row'>

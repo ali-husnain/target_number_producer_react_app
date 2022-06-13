@@ -4,31 +4,27 @@ import IsReachable from "../../utils/IsReachable";
 function ProduceTarget(props) {
     const [targetNumber, setTargetNumber] = useState();
 
-    const handleOnChange = (e) => {
+    const changeHandler = (e) => {
         setTargetNumber(parseInt(e.target.value));
     };
 
-
-    const handleOnSubmit = (e) => {
+    const submitHandler = (e) => {
         e.preventDefault();
         if (props.numbers.length === 0) return alert("Please import file for numbers");
         if (targetNumber > 0) {
             const isReachable = IsReachable(props.numbers, targetNumber);
-            if (isReachable) {
-                props.setIsReachable("Number Produced.");
-            } else {
-                props.setIsReachable("Not Possible!");
-            }
+            let displayText = isReachable ? "Number Produced." : "Not Possible!";
+            props.setIsReachable(displayText);
         }
     };
 
     return (
         <div className='item'>
-                <form onSubmit={handleOnSubmit}>
+                <form onSubmit={submitHandler}>
                 <div className="row">
                     <label>Target Number</label><br />
                     <input type="number" placeholder="Enter number"
-                        onChange={handleOnChange}
+                        onChange={changeHandler}
                     />
                 </div>
                 <div className='row'>

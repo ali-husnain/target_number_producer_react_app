@@ -8,7 +8,6 @@ function OutputBox(props) {
                     <h3>
                         {props.title}
                         <p>
-                            {/* {props.array.toString(",")} */}
                             {props.displayText}
                         </p>  
                     </h3>
