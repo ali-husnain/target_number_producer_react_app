@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import UploadFile from './uploadFile';
 import OutputBox from './outputBox';
 import ProduceTarget from './produceTarget';
+import numbers from './../../numbers.csv';
 
 function TargetNumberProducer() {
     const [array, setArray] = useState([]);
@@ -9,7 +10,8 @@ function TargetNumberProducer() {
 
     return (
         <div>
-             <h2>Target Number Producer From Given Numbers List</h2>
+            <h2>Target Number Producer From Given Numbers List</h2>
+            <p>Here you can download sample csv <a href={numbers} download>download</a></p>
             <div className='card'>
                 <UploadFile setArray={setArray} />
                 <OutputBox title="List of Numbers" displayText={array.toString(",")} />   
