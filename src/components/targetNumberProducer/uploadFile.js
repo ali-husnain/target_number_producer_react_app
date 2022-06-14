@@ -13,8 +13,7 @@ function UploadFile(props) {
 
         if (file) {
             fileReader.onload = function (event) {
-                const text = event.target.result;
-                csvFileToArray(text);
+                props.setArray(csvFileToArray(event.target.result));
             };
 
             fileReader.readAsText(file);
@@ -23,8 +22,7 @@ function UploadFile(props) {
 
     const csvFileToArray = string => {
         const stringToArray = string.trim().replace(/\s/g, ",").split(",");
-        const array = stringToArray.map((item) => parseInt(item))
-        props.setArray(array);
+        return stringToArray.map((item) => parseInt(item))
     };
 
     return (

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import UploadFile from './uploadFile';
 import OutputBox from './outputBox';
 import ProduceTarget from './produceTarget';
@@ -7,6 +7,10 @@ import numbers from './../../numbers.csv';
 function TargetNumberProducer() {
     const [array, setArray] = useState([]);
     const [isReachable, setIsReachable] = useState('');
+
+    useEffect(() => {
+        setIsReachable("");
+    }, [array]);
 
     return (
         <div>
