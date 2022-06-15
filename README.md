@@ -18,11 +18,11 @@ It correctly bundles React in production mode and optimizes the build for the be
 ### `Interface Screenshots`
 
 #### Code Structure
-![ScreenShot](/screenshots/code_structure.png)
-
 ![ScreenShot](/screenshots/app.png)
 
 ![ScreenShot](/screenshots/targetApp.png)
+
+![ScreenShot](/screenshots/targetProducer.png)
 
 #### Display
 ![ScreenShot](/screenshots/app_display.png)

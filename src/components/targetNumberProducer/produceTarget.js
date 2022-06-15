@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import IsReachable from "../../utils/IsReachable";
+import EquationGenerator from "../../utils/EquationGenerator";
 
 function ProduceTarget(props) {
     const [targetNumber, setTargetNumber] = useState();
@@ -12,9 +12,9 @@ function ProduceTarget(props) {
         e.preventDefault();
         if (props.numbers.length === 0) return alert("Please import file for numbers");
         if (targetNumber > 0) {
-            const isReachable = IsReachable(props.numbers, targetNumber);
-            let displayText = isReachable ? "Number Produced." : "Not Possible!";
-            props.setIsReachable(displayText);
+            const eqGenerator = new EquationGenerator(props.numbers, targetNumber);
+            let displayText = eqGenerator.generateAndPrint();
+            props.setIsGenerated(displayText);
         }
     };
 
